@@ -14,9 +14,10 @@ export default function LoginComponent( {checkIfValid}: LoginProps ){
             password: ''
         }
     const [loginDetails, setLoginDetails] = useState<LoginDetails>(initialLoginDetails);
-    const [isValid, setIsValid] = useState<boolean>(false)
-    function handleLoginDetails(){
-        setLoginDetails({...loginDetails, [event?.target.id]: event?.target.value})
+    function handleLoginDetails(event: React.ChangeEvent<HTMLInputElement>){
+        if (event?.target.id){
+            setLoginDetails({...loginDetails, [event?.target.id]: event?.target.value})
+        }
     }
     
     function sendToFrontIfValid(){

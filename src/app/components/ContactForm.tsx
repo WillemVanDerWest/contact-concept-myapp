@@ -10,8 +10,10 @@ export default function ContactForm(){
     }
 
     const [formState, setFormState] = useState<formInfo>()
-    const handleFormState = () => {
-        setFormState({...formState, [event?.target.id]: event?.target.value})
+    const handleFormState = (event: React.ChangeEvent<HTMLInputElement>) => {
+        if(event?.target?.id){
+            setFormState({...formState, [event?.target.id]: event.target.value})
+        }
     }
 
     interface entryData {
@@ -24,10 +26,10 @@ export default function ContactForm(){
 
    function handleSubmit(){
         const entry: entryData = {
-            name: formState?.name,
-            phone: formState?.phone,
-            email: formState?.email,
-            info: formState?.info,
+            name: formState?.name|| '',
+            phone: formState?.phone|| '',
+            email: formState?.email|| '',
+            info: formState?.info|| '',
             date: new Date()
         }
         if (entry.name === undefined || entry.email === undefined || entry.info === undefined){
@@ -47,7 +49,7 @@ export default function ContactForm(){
                         type='text' 
                         placeholder='email' 
                         id='email'
-                        value={formState?.email}
+                        value={formState?.email||''}
                         onChange={handleFormState}
                         />
                 </div>
@@ -57,6 +59,7 @@ export default function ContactForm(){
                         type='text'
                         placeholder='name' 
                         id='name'
+                        value={formState?.name||''}
                         onChange={handleFormState}/>
                         
                 </div>
@@ -66,7 +69,7 @@ export default function ContactForm(){
                         type='text'
                         placeholder='phone' 
                         id='phone'
-                        value={formState?.phone}
+                        value={formState?.phone||''}
                         onChange={handleFormState}/>
                         
                 </div>
@@ -76,6 +79,7 @@ export default function ContactForm(){
                         type='text' 
                         placeholder='info' 
                         id='info'
+                        value={formState?.info||''}
                         onChange={handleFormState}/>
                 </div>
                 

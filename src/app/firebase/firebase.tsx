@@ -1,10 +1,7 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-import { getDoc, getDocs, getFirestore, query } from "firebase/firestore";
+import {  getDocs, getFirestore, query } from "firebase/firestore";
 import { collection, addDoc } from "firebase/firestore"; 
-import { doc } from "firebase/firestore/lite";
-import { sendStatusCode } from "next/dist/server/api-utils";
 import { NextResponse } from "next/server";
 
 
@@ -48,6 +45,7 @@ try {
     date: entry.date,
     phone: entry.phone 
   });
+  console.log(docRef);
   console.log("Document added successfully",NextResponse.json(
     {
         message: "Created document entry",
