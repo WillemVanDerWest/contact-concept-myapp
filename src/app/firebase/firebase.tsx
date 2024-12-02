@@ -14,13 +14,13 @@ import { NextResponse } from "next/server";
 
 
 const firebaseConfig2 = {
-    apiKey: "AIzaSyACszD_4oasXDtoWYsQlGPRRYa1Q0w0iis",
-    authDomain: "contact-form-dbb8a.firebaseapp.com",
-    projectId: "contact-form-dbb8a",
-    storageBucket: "contact-form-dbb8a.firebasestorage.app",
-    messagingSenderId: "179821406306",
-    appId: "1:179821406306:web:e4e6a9ed61d11d129bc93b",
-    measurementId: "G-LDEF3JGTR4"
+    apiKey: process.env.NEXT_PUBLIC_FIRESTORE_APIKEY,
+    authDomain: process.env.NEXT_PUBLIC_FIRESTORE_AUTHDOMAIN,
+    projectId: process.env.NEXT_PUBLIC_FIRESTORE_PROKECTID,
+    storageBucket: process.env.NEXT_PUBLIC_FIRESTORE_STORAGEBUCKET,
+    messagingSenderId: process.env.NEXT_PUBLIC_FIRESTORE_MESSAGINGSENDERID,
+    appId: process.env.NEXT_PUBLIC_FIRESTORE_APPID,
+    measurementId: process.env.NEXT_PUBLIC_FIRESTORE_MEASUREMENTID
   };
 
 // Initialize Firebase
