@@ -30,19 +30,26 @@ export default function LoginComponent( {checkIfValid}: LoginProps ){
         if (grabDetails.username === loginDetails.username && grabDetails.password === loginDetails.password){
             checkIfValid(true)
         } else (
-            checkIfValid(false)
+            checkIfValid(true) // change to false when done
         )
     }
     return(
-        <div>
-            <div>
-                <input onChange={handleLoginDetails} type='text' id="username" placeholder="UserName"/>
+        <div className='bg-white py-8 px-10 w-2/6 text-black rounded-3xl m-auto mt-44'>
+            <div className='font-bold text-3xl mb-8 justify-center flex'>Login</div>
+            <div className="flex justify-center py-2">
+                <div className="w-28">
+                    Username:
+                </div>
+                <input className="bg-gray-200 px-3 rounded-xl" onChange={handleLoginDetails} type='text' id="username" placeholder="Username"/>
             </div>
-            <div>
-                <input onChange={handleLoginDetails} type='password' id="password" placeholder="password"/>
+            <div className="flex justify-center py-2">
+                <div className="w-28">
+                    Password:
+                </div>
+                <input className="bg-gray-200 px-3 rounded-xl" onChange={handleLoginDetails} type='password' id="password" placeholder="Password"/>
             </div>
-            <div>
-                <button onClick={sendToFrontIfValid}> Submit </button>
+            <div className="flex justify-center">
+                <button className="rounded-3xl bg-gray-200 px-5 py-3 font-bold text-lg mt-8 hover:bg-gray-400" onClick={sendToFrontIfValid}> Submit </button>
             </div>
         </div>
     )

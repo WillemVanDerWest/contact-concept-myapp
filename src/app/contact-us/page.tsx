@@ -1,12 +1,12 @@
 import ContactForm from "../components/ContactForm"
-import NavBar from "../components/NavBar"
+import Link from "next/link"
 
 export default function TestPage(){
 
     return(
         <div>
-            <NavBar/>
             <ContactForm/>
+            <Link prefetch={true} href='/'>Home</Link>
         </div>
     )
 }
